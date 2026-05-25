@@ -39,7 +39,7 @@ def submit():
 
     collection.insert_one(form_data)
 
-    return "Form submitted successfully"
+    return "Data submitted successfully"
 
 if __name__ == '__main__':
     app.run(debug=True)
