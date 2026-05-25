@@ -40,6 +40,19 @@ def submit():
     collection.insert_one(form_data)
 
     return "Data submitted successfully"
+@app.route('/view')
+def view():
+    data = collection.find()
+    data = list(data)
+    for item in data:
+        print(item)
+        del item['_id']
+
+        data = {
+            'data': data
+           
+        }
+    return data
 
 if __name__ == '__main__':
     app.run(debug=True)
